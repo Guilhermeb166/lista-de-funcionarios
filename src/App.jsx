@@ -45,6 +45,23 @@ export default function App() {
     setShowAddForm(false)
   }
 
+  const formatPhone = (value) => {
+    const cleaned = value.replace(/\D/g, '')
+    let formatted = ''
+    
+    if (cleaned.length > 0) {
+      formatted = `(${cleaned.substring(0, 2)}`
+    }
+    if (cleaned.length > 2) {
+      formatted += ` ${cleaned.substring(2, 7)}`
+    }
+    if (cleaned.length > 7) {
+      formatted += `-${cleaned.substring(7, 11)}`
+    }
+    
+    return formatted
+  }
+
   const handleEditClick = (employee) => {
     setEditingId(employee.id)
     setEditFormData({
@@ -121,13 +138,21 @@ export default function App() {
                   employee.email
                 )}
               </td>
-              <td>{editingId === employee.id ? (
+              <td>
+                {editingId === employee.id ? (
                   <input
                     type="tel"
                     name="phone"
                     value={editFormData.phone}
-                    onChange={handleEditFormChange}
+                    onChange={(e) => {
+                      const formatted = formatPhone(e.target.value)
+                      setEditFormData({
+                        ...editFormData,
+                        phone: formatted
+                      })
+                    }}
                     className={styles.inputEdit}
+                    maxLength={16}
                   />
                 ) : (
                   employee.phone

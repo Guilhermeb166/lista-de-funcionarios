@@ -17,15 +17,21 @@ export default function addEmployee({onSave, onCancel}) {
     let formatted = ''
 
     if(cleaned.length > 0) {
-      formatted = `(${cleaned.substring(0, 2)})`
+      formatted = `(${cleaned.substring(0, 2)}`
     }
     if(cleaned.length > 2){
-      formatted += `  ${cleaned.substring(2, 7)}`
+      formatted += `)  ${cleaned.substring(2, 7)}`
     }
     if(cleaned.length > 7){
       formatted += `-${cleaned.substring(7,11)}`
     }
     return formatted
+  }
+
+  const handlePhoneChange = (e) => {
+    const input = e.target.value
+    const formatted = formatPhone(input)
+    setPhone(formatted)
   }
 
   const handleSubmit = (e) => {
@@ -47,18 +53,19 @@ export default function addEmployee({onSave, onCancel}) {
         <form onSubmit={handleSubmit} className={styles.form}>
           <div>
             <label>Nome:</label>
-            <input type="text" value={name} onChange={(e)=> setName(e.target.value)}/>
+            <input type="text" value={name} onChange={(e)=> setName(e.target.value)} placeholder='Nome do funcionário' required/>
           </div>
           <div>
             <label>Email:</label>
-            <input type="text" value={email} onChange={(e)=> setEmail(e.target.value)}/>
+            <input type="text" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='Email do funcionário' required/>
           </div>
           <div>
             <label>Telefone:</label>
-            <input type="text"  value={phone} onChange={(e)=> setPhone(e.target.value)}/></div>
+            <input type="text"  value={phone} onChange={handlePhoneChange} placeholder='(XX) XXXX-XXXX' maxLength={16} minLength={15} required/>
+          </div>
           <div>
             <label>Função/Cargo:</label>
-            <input type="text" value={role} onChange={(e) => setRole(e.target.value)}/>
+            <input type="text" value={role} onChange={(e) => setRole(e.target.value)}  placeholder='Cargo do funcionário' required/>
           </div>
           <div className={styles.buttonsWrapper}>
             <button type='submit' className={styles.saveButton}> Salvar </button>
