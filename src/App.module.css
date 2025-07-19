@@ -67,20 +67,19 @@ body.modalOpen {
 
 .tableWrapper {
   width: 100%;
-  display: flex;
-  justify-content: center;
+  overflow-x: auto;
+  
 }
 
 .employeeTable {
-  width: 95%;
+   width: 100%; 
   background: white;
-
-  max-width: 950px;
+  min-width: 700px;
+  max-width: 1050px;
   border-spacing: 0;
   border-collapse: separate;
-  border-radius: 8px;
+  margin: 0 auto;
   margin-top: 20px;
-  overflow: hidden;
   box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
 
 
@@ -89,6 +88,7 @@ body.modalOpen {
     text-align: center;
     letter-spacing: 0.025em;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   & td {
@@ -96,6 +96,7 @@ body.modalOpen {
     border-bottom: 1px solid #d5d9dd;
     color: #4a5568;
     text-align: center;
+    white-space: nowrap;
   }
 
   & tr:last-child td {
@@ -177,19 +178,28 @@ thead {
 
   .tableWrapper {
     width: 100%;
-    overflow-x: auto;
   }
 
   .employeeTable {
-    width: 100%;
-    border-collapse: collapse;
+
+    min-width: 50px;
     font-size: 0.9rem;
+  }
+.employeeTable td:first-child {
+  padding-left: 16px;
+  text-align: left;
+}
+  .employeeTable th:first-child,
+  .employeeTable td:first-child {
+    min-width: 150px;
   }
 
   .employeeTable th,
   .employeeTable td {
     padding: 6px 8px;
     font-size: 0.85rem;
+    white-space: nowrap;
+
   }
 
   .actions {
