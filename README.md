@@ -1,12 +1,54 @@
-# React + Vite
+Sistema de Gerenciamento de Funcionários
+https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E
+https://img.shields.io/badge/Storage-LocalStorage-blue
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Um sistema completo para gerenciamento de cadastros de funcionários desenvolvido com React e Vite, com armazenamento local persistente.
 
-Currently, two official plugins are available:
+📋 Índice
+Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Tecnologias
 
-## Expanding the ESLint configuration
+Como Usar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Estrutura do Projeto
+
+Capturas de Tela
+
+Licença
+
+✨ Funcionalidades
+CRUD Completo:
+
+✅ Adicionar novos funcionários
+
+✏️ Editar informações existentes
+
+❌ Remover funcionários
+
+🔄 Atualizações em tempo real
+
+Persistência de Dados:
+
+💾 Armazenamento local com localStorage
+
+🔄 Sincronização automática
+
+Experiência do Usuário:
+
+📱 Design responsivo (mobile/desktop)
+
+⏳ Tela de carregamento elegante
+
+📞 Formatação automática de telefone
+
+📝 Validação de formulários
+
+🛠️ Tecnologias
+Tecnologia	Descrição
+https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white	Biblioteca JavaScript para interfaces
+https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=white	Build tool extremamente rápida
+https://img.shields.io/badge/React_Icons-F7DF1E?logo=react&logoColor=white	Ícones populares para React
+https://img.shields.io/badge/UUID-000000?logo=uuid&logoColor=white	Geração de IDs únicos
+CSS Modules	Estilização modular e escopada
