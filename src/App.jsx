@@ -18,9 +18,16 @@ export default function App() {
   })
   useEffect(() => {
     const img = new Image()
-    img.src = '/img/fundoDesktop.png' // Caminho relativo da pasta public
+    const img2 = new Image()
 
+    img.src = '/img/fundoDesktop.png' // Caminho relativo da pasta public
+    img2.src = '/img/fundoMobile.png'
+    
     img.onload = () => {
+      setLoading(false)
+    }
+
+    img2.onload = () =>{
       setLoading(false)
     }
   }, [])

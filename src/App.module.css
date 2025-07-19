@@ -157,7 +157,7 @@ thead {
 
 @media (max-width: 768px) {
   .main {
-    background: url('../public/img/fundoPc.png') no-repeat center center fixed;
+    background: url('../public/img/fundoMobile.png') no-repeat center center fixed;
     padding: 20px;
     background-position: center;
     background-size: cover;
