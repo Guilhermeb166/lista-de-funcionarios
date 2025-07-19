@@ -1,3 +1,24 @@
+.loadingIcon {
+  color: #fff;
+  font-size: 5rem;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 body.modalOpen {
   overflow: hidden;
 }
@@ -132,4 +153,59 @@ thead {
   outline: none;
   border-color: #2196F3;
   box-shadow: 0 0 5px rgba(33, 150, 243, 0.5);
+}
+
+@media (max-width: 768px) {
+  .main {
+    background: url('../public/img/fundoPc.png') no-repeat center center fixed;
+    padding: 20px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .addButton {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .employeeTable {
+    width: 100%;
+    font-size: 0.85rem;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .employeeTable table {
+    width: 100%;
+    min-width: 600px;
+  }
+
+  .employeeTable th,
+  .employeeTable td {
+    padding: 6px 8px;
+    font-size: 0.85rem;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .inputEdit {
+    font-size: 0.9rem;
+    padding: 6px;
+  }
+
+  .loadingIcon {
+    font-size: 3rem;
+    top: 40%;
+    left: 50%;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
 }
