@@ -99,7 +99,7 @@ export default function App() {
   
     return (
     <main className={styles.main} >
-      <h1>Lista de Funcionáiros</h1>
+      <h1>Lista de Funcionários</h1>
       <button onClick={()=> setShowAddForm(true)} className={styles.addButton}>Adicionar Funcionário</button>
       <table className={styles.employeeTable}>
         <thead>

@@ -1,8 +1,8 @@
 //addEmployee.jsx
 import styles from './addEmployee.module.css'
 import { useState } from "react"
-import {v4 as uuidv4} from 'uuid'
-export default function addEmployee({onSave, onCancel}) {
+import { v4 as uuidv4 } from 'uuid'
+export default function addEmployee({ onSave, onCancel }) {
 
   const [name, setName] = useState("") //Nome do Funcionário
   const [email, setEmail] = useState("") // Email
@@ -16,14 +16,14 @@ export default function addEmployee({onSave, onCancel}) {
     //aplica a máscara (XX) XXXX-XXXX
     let formatted = ''
 
-    if(cleaned.length > 0) {
+    if (cleaned.length > 0) {
       formatted = `(${cleaned.substring(0, 2)}`
     }
-    if(cleaned.length > 2){
+    if (cleaned.length > 2) {
       formatted += `)  ${cleaned.substring(2, 7)}`
     }
-    if(cleaned.length > 7){
-      formatted += `-${cleaned.substring(7,11)}`
+    if (cleaned.length > 7) {
+      formatted += `-${cleaned.substring(7, 11)}`
     }
     return formatted
   }
@@ -53,19 +53,19 @@ export default function addEmployee({onSave, onCancel}) {
         <form onSubmit={handleSubmit} className={styles.form}>
           <div>
             <label>Nome:</label>
-            <input type="text" value={name} onChange={(e)=> setName(e.target.value)} placeholder='Nome do funcionário' required/>
+            <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder='Nome do funcionário' required autoComplete='off' />
           </div>
           <div>
             <label>Email:</label>
-            <input type="text" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='Email do funcionário' required/>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder='Email do funcionário' required autoComplete='off'/>
           </div>
           <div>
             <label>Telefone:</label>
-            <input type="text"  value={phone} onChange={handlePhoneChange} placeholder='(XX) XXXX-XXXX' maxLength={16} minLength={15} required/>
+            <input type="text" value={phone} onChange={handlePhoneChange} placeholder='(XX) XXXX-XXXX' maxLength={16} minLength={15} required autoComplete='off'/>
           </div>
           <div>
             <label>Função/Cargo:</label>
-            <input type="text" value={role} onChange={(e) => setRole(e.target.value)}  placeholder='Cargo do funcionário' required/>
+            <input type="text" value={role} onChange={(e) => setRole(e.target.value)} placeholder='Cargo do funcionário' required autoComplete='off'/>
           </div>
           <div className={styles.buttonsWrapper}>
             <button type='submit' className={styles.saveButton}> Salvar </button>
@@ -74,6 +74,6 @@ export default function addEmployee({onSave, onCancel}) {
         </form>
       </div>
     </div>
-    
+
   )
 }
