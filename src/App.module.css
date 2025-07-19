@@ -65,6 +65,12 @@ body.modalOpen {
   }
 }
 
+.tableWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .employeeTable {
   width: 95%;
   background: white;
@@ -169,16 +175,15 @@ thead {
     font-size: 1rem;
   }
 
-  .employeeTable {
+  .tableWrapper {
     width: 100%;
-    font-size: 0.85rem;
     overflow-x: auto;
-    display: block;
   }
 
-  .employeeTable table {
+  .employeeTable {
     width: 100%;
-    min-width: 600px;
+    border-collapse: collapse;
+    font-size: 0.9rem;
   }
 
   .employeeTable th,

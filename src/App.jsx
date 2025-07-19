@@ -22,7 +22,7 @@ export default function App() {
 
     img.src = '/img/fundoDesktop.png' // Caminho relativo da pasta public
     img2.src = '/img/fundoMobile.png'
-    
+
     img.onload = () => {
       setLoading(false)
     }
@@ -122,6 +122,7 @@ export default function App() {
 
         <h1>Lista de Funcionários</h1>
         <button onClick={() => setShowAddForm(true)} className={styles.addButton}>Adicionar Funcionário</button>
+        <div className={styles.tableWrapper}>
         <table className={styles.employeeTable}>
           <thead>
             <tr>
@@ -219,6 +220,7 @@ export default function App() {
             ))}
           </tbody>
         </table>
+        </div>
         {showAddForm && (
           <AddEmployee
             onSave={handleAddEmployee}
